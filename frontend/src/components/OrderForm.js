@@ -148,8 +148,10 @@ const OrderForm = () => {
       navigate('/');
     } catch (error) {
       console.error('Ошибка сохранения заказа:', error);
-      alert('Ошибка сохранения заказа. Проверьте данные и попробуйте снова.');
+      const errorMessage = error.response?.data?.message || 'Ошибка сохранения заказа. Проверьте данные и попробуйте снова.';
+      alert(errorMessage);
     }
+    
   };
 
   return (
